@@ -157,16 +157,14 @@ def links_row(skip):
 
 
 # ---------------------------------------------------------------- startsidan
-hero = f'''<section class="hero" aria-label="Välkommen">
-    <div class="ph site slide on">{img("hero-gravmaskin.jpg", "50% 55%", lazy=False)}</div>
-    <div class="ph forest slide">{img("hero-grus.jpg", "50% 50%", lazy=False)}</div>
-    <div class="ph house slide">{img("hero-vag.jpg", "50% 50%", lazy=False)}</div>
+hero = f'''<section class="hero hero-video" aria-label="Välkommen">
+    <div class="ph"><video class="photo" autoplay muted loop playsinline preload="auto" poster="img/hero-gravmaskin.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video></div>
     <div class="in">
       <h1>Vi lägger grunden för det du ska bygga</h1>
       <p>Små och stora markentreprenader på Orust och i Göteborgsregionen – med egen maskinpark sedan 1984.</p>
-      <div class="row"><a class="btn btn-w" href="tjanster.html">Se vårt erbjudande</a><a class="btn btn-o" href="kontakt.html" style="color:#fff">Begär offert</a>
-        <div class="dots" role="group" aria-label="Byt bild"><button aria-label="Bild 1" aria-current="true"></button><button aria-label="Bild 2"></button><button aria-label="Bild 3"></button></div></div>
+      <div class="row"><a class="btn btn-w" href="tjanster.html">Se vårt erbjudande</a><a class="btn btn-o" href="kontakt.html" style="color:#fff">Begär offert</a></div>
     </div>
+    <a class="hero-down" href="#tjanster" aria-label="Scrolla ner till tjänsterna"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </section>'''
 
 index_main = f'''  {hero}

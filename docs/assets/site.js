@@ -117,3 +117,13 @@ document.querySelectorAll("form[data-mail]").forEach((f) => f.addEventListener("
 
 /* ---------- till toppen ---------- */
 document.querySelectorAll("[data-top]").forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); }));
+
+/* ---------- Ängö: video i toppen ---------- */
+const head = document.querySelector("header");
+const setHead = () => head && document.documentElement.style.setProperty("--head", head.offsetHeight + "px");
+setHead(); addEventListener("resize", setHead);
+const heroVideo = document.querySelector(".hero-video video");
+if (heroVideo) {
+  if (reduce) { heroVideo.removeAttribute("autoplay"); heroVideo.pause(); }
+  else heroVideo.play?.().catch(() => {});
+}

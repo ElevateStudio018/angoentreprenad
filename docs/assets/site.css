@@ -405,3 +405,14 @@ a.pcard:hover h3{color:var(--green)}
 .pdots{display:flex;gap:6px;margin-right:auto}
 .pdots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s,width .2s}
 .pdots i.on{background:var(--green);width:18px;border-radius:3px}
+
+/* Ängö: fullskärmshero med video */
+.hero-video{min-height:calc(100svh - var(--head,65px));align-items:flex-end}
+.hero-video video.photo{width:100%;height:100%;object-fit:cover;display:block}
+.hero-video .ph::after{background:linear-gradient(0deg,rgb(16 33 25/.8) 0%,rgb(16 33 25/.3) 50%,rgb(16 33 25/.15))}
+.hero-video .in{padding-block:0 clamp(64px,10vh,110px)}
+.hero-down{position:absolute;left:50%;bottom:22px;translate:-50% 0;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:#fff;border:1.5px solid rgb(255 255 255/.55);animation:bob 2s ease-in-out infinite}
+.hero-down svg{width:20px;height:20px}
+.hero-down:hover{background:rgb(255 255 255/.12)}
+@keyframes bob{50%{transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.hero-down{animation:none}}
