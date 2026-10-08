@@ -37,27 +37,41 @@ def tiles():
     return '<div class="tiles">' + "".join(out) + "</div>"
 
 
-def header(home=False):
+NAV = [("tjanster.html", "Tjänster"), ("projekt.html", "Projekt"), ("maskinpark.html", "Maskinpark"), ("om-oss.html", "Om oss"), ("kontakt.html", "Kontakt")]
+
+
+def section_of(name):
+    if name.startswith("tjanst"):
+        return "tjanster.html"
+    if name.startswith("projekt"):
+        return "projekt.html"
+    return name
+
+
+def header(home=False, name="index.html"):
     label = "till toppen" if home else "till startsidan"
-    sub = "".join(f'<a href="tjanst-{s}.html">{t}</a>' for s, t, *_ in SERVICES)
+    cur = section_of(name)
+    links = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == cur else ""}>{t}</a>' for h, t in NAV)
+    sub = "".join(f'<li><a href="tjanst-{s}.html">{t}</a></li>' for s, t, *_ in SERVICES)
+    main = "".join(f'<li><a href="{h}"{" aria-current=\"page\"" if h == cur else ""}>{t}</a></li>' for h, t in NAV)
     return f'''<header>
   <div class="in nav">
     <a class="logo" href="index.html" aria-label="Ängö Entreprenad, {label}">{LOGO_DARK}</a>
+    <nav class="mainnav" aria-label="Huvudmeny">{links}</nav>
+    <a class="navphone" href="tel:{TEL}">{PHONE}</a>
+    <a class="btn btn-g navcta" href="kontakt.html">Begär offert</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="overlay" aria-label="Öppna menyn"><span></span><span></span><span></span></button>
-    <a class="btn btn-g" href="kontakt.html">Kontakta oss</a>
   </div>
 </header>
 <div class="overlay" id="overlay" aria-hidden="true" inert>
   <div class="ov-top"><a class="logo" href="index.html">{LOGO_LIGHT}</a><button class="ov-close" id="menuClose" type="button" aria-label="Stäng menyn">Stäng <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 4l12 12M16 4 4 16"/></svg></button></div>
-  <nav aria-label="Huvudmeny"><ul>
-    <li><a href="tjanster.html">Vårt erbjudande</a></li>
-    <li><a href="projekt.html">Projekt</a></li>
-    <li><a href="maskinpark.html">Maskinpark</a></li>
-    <li><a href="om-oss.html">Om oss</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-  </ul>
-  <div class="ov-sub">{sub}</div>
-  <div class="ov-foot"><span>{PHONE}</span><span>{MAIL}</span><span>{ADDR}</span></div></nav>
+  <nav class="ov-nav" aria-label="Meny">
+    <ul class="ov-main">{main}</ul>
+    <div class="ov-cols">
+      <div><p class="ov-h">Tjänster</p><ul class="ov-list">{sub}</ul></div>
+      <div><p class="ov-h">Kontakt</p><ul class="ov-list"><li><a href="tel:{TEL}">{PHONE}</a></li><li><a href="mailto:{MAIL}">{MAIL}</a></li><li>{ADDR}</li></ul></div>
+    </div>
+  </nav>
 </div>'''
 
 
@@ -103,7 +117,7 @@ def page(name, title, desc, main, home=False):
 <link rel="icon" href="data:image/svg+xml,{FAVICON}">
 </head>
 <body>
-{header(home)}
+{header(home, name)}
 <main{' id="top"' if home else ''}>
 {main}
 </main>
