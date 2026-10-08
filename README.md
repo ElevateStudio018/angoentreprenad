@@ -2,7 +2,7 @@
 
 Ny webbplats för [Ängö Entreprenad AB](https://angoentreprenad.se/), byggd på samma mall som
 [Lindvik Bygg-sidan i lirk](https://elevatestudio018.github.io/lirk/) (med Ängös gula och svarta färger,
-Bricolage Grotesque + Source Sans 3). Designen, `site.css` och `site.js` är desamma; texten är Ängös egen.
+Outfit + DM Sans). Designen, `site.css` och `site.js` är desamma; texten är Ängös egen.
 
 ## Sidor
 

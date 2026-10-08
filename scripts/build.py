@@ -98,7 +98,7 @@ def page(name, title, desc, main, home=False):
 <title>{full_title}</title>
 <meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,{FAVICON}">
 </head>
@@ -156,9 +156,8 @@ def links_row(skip):
 hero = f'''<section class="hero hero-video" aria-label="Välkommen">
     <div class="ph"><video class="photo" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4" media="(min-width: 768px)"><source src="video/hero-mobil.mp4" type="video/mp4"></video></div>
     <div class="in hero-copy">
-      <h1>Schakt, sprängning och husgrunder på Orust och i&nbsp;Göteborg.</h1>
-      <p class="hero-links"><a href="kontakt.html">Begär offert</a><a href="tel:{TEL}">{PHONE}</a></p>
-      <dl class="hero-facts"><div><dt>Sedan</dt><dd>1984</dd></div><div><dt>Maskinpark</dt><dd>Ca 45 enheter</dd></div><div><dt>Kontor</dt><dd>Orust och Göteborg</dd></div></dl>
+      <h1>Markarbeten sedan&nbsp;1984.</h1>
+      <p class="hero-place">Orust · Göteborg</p>
     </div>
   </section>'''
 
