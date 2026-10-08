@@ -49,6 +49,19 @@ bilder genom att ersätta filerna med samma namn. `villaomrade.jpg` (Låssby) ko
 | `maskiner.jpg` | [5125783](https://www.pexels.com/photo/5125783/) |
 | `alvsborgsbron.jpg` | [31146748](https://www.pexels.com/photo/31146748/) |
 
+## Video i toppen
+
+Startsidans fullskärmshero spelar Ängös egen drönarfilm (tyst, i loop). Originalet (89 MB) är
+komprimerat till `docs/video/hero.mp4` (1920×1080, ca 10 MB) och `docs/video/hero-mobil.mp4`
+(960×540, ca 3 MB, används på mobil). `docs/img/hero-poster.jpg` visas innan videon har laddats.
+
+För att byta video: komprimera den nya filen på samma sätt, till exempel
+
+```bash
+ffmpeg -i ny.mp4 -an -c:v libx264 -preset slow -crf 27 -pix_fmt yuv420p -movflags +faststart -vf scale=1920:-2 docs/video/hero.mp4
+ffmpeg -i ny.mp4 -an -c:v libx264 -preset slow -crf 28 -profile:v main -pix_fmt yuv420p -movflags +faststart -vf scale=960:-2 docs/video/hero-mobil.mp4
+```
+
 ## Ändra text
 
 Sidorna genereras av `scripts/build.py`. Ändra texten där och kör:
