@@ -547,3 +547,6 @@ h1,h2,h3{letter-spacing:-.02em}
 .hero-place{align-items:baseline}
 .skyline{position:relative;top:calc(4 / 48 * 42px + .22em)}
 @media (max-width:640px){.skyline{top:calc(4 / 48 * 30px + .22em)}}
+/* menyknapp även på dator */
+@media (min-width:1080px){.burger{display:grid;margin-left:0}}
+@media (min-width:1248px){.ov-nav{padding-inline:20px}}
