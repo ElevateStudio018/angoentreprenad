@@ -30,7 +30,7 @@ if (slides.length > 1) {
   restart();
 }
 const hero = $(".hero");
-if (hero && !reduce && fine) {
+if (hero && !hero.classList.contains("hero-video") && !reduce && fine) {
   const layers = [[".hero h1", 26], [".hero p", 16], [".hero .row", 10]].map(([s, d]) => [hero.querySelector(s), d]).filter(([el]) => el);
   hero.addEventListener("pointermove", (e) => {
     const r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;

@@ -481,3 +481,17 @@ details[open] summary{color:var(--ink)}
 footer{border-top:0}
 .tile:hover,.tile:focus-visible{box-shadow:inset 0 -5px 0 var(--yellow)}
 .quick{background:var(--white);padding-block:clamp(40px,6vw,72px) 0}
+
+/* Ängö: hero – sakligt, utan mallkänsla */
+.hero-video .ph::after{background:linear-gradient(0deg,rgb(14 14 13/.82) 0%,rgb(14 14 13/.35) 38%,rgb(14 14 13/0) 70%)}
+.hero-video .in.hero-copy{padding-block:0;display:grid;gap:0}
+.hero-video h1{font-family:"Archivo",var(--display);font-weight:700;font-stretch:72%;font-variation-settings:"wdth" 72;font-size:clamp(2.5rem,6vw,5.4rem);line-height:.98;letter-spacing:-.005em;max-width:17ch;color:#fff;margin:0;animation:none;text-wrap:balance}
+.hero-links{display:flex;gap:28px;flex-wrap:wrap;margin:26px 0 0;font:600 1.05rem/1 var(--body)}
+.hero-links a{color:#fff;text-decoration:none;padding-bottom:6px;border-bottom:2px solid rgb(255 255 255/.45);transition:border-color .2s}
+.hero-links a:first-child{border-color:var(--yellow)}
+.hero-links a:hover{border-color:#fff}
+.hero-links a:first-child:hover{border-color:#fff}
+.hero-facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 56px;margin:clamp(40px,7vh,72px) 0 0;padding:18px 0 28px;border-top:1px solid rgb(255 255 255/.28)}
+.hero-facts dt{font:500 .8rem/1.2 var(--body);color:rgb(255 255 255/.6)}
+.hero-facts dd{margin:4px 0 0;font:600 1rem/1.2 var(--body);color:#fff}
+@media (max-width:640px){.hero-facts{grid-template-columns:1fr 1fr;gap:14px 28px}.hero-facts div:last-child{grid-column:1/-1}.hero-links{gap:22px}}
