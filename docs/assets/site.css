@@ -523,3 +523,6 @@ h1,h2,h3{letter-spacing:-.02em}
 .overlay .ov-list a::after{content:none}
 .overlay .ov-list a:hover{color:var(--yellow)}
 .ov-close{height:44px;font:500 15px var(--body)}
+.hero-video .in.hero-copy{padding-block:0 clamp(72px,14vh,160px)}
+.hero-video h1{line-height:.98}
+.hero-video .ph::after{background:linear-gradient(0deg,rgb(14 14 13/.75) 0%,rgb(14 14 13/.35) 50%,rgb(14 14 13/0) 78%)}
