@@ -209,20 +209,24 @@ index_main = f'''  {hero}
     </div>
   </section>
 
-  <section id="projekt">
-    <div class="in proj">
-      <div>
-        <span class="eyebrow">Projekt</span><h2 style="margin-top:8px">Gjort av oss</h2>
-        <p class="lead" style="margin-top:14px">Flera hundra husgrunder genom åren – stora som små. Här är ett urval av vad vi gör.</p>
-        <a class="btn btn-g" style="margin-top:22px" href="projekt.html">Alla projekt</a>
+  <section id="projekt" class="projects">
+    <div class="in">
+      <div class="headrow"><div><span class="eyebrow">Projekt</span><h2 style="margin-top:8px">Gjort av oss</h2></div><a class="arrow" href="projekt.html">Alla projekt</a></div>
+      <a class="feat" href="projekt-lassby.html">
+        <div class="ph">{img("villaomrade.jpg", alt="Låssby, Hisingen")}</div>
+        <div class="feat-body">
+          <small>Hisingen · 2021–2022</small>
+          <h3>Låssby</h3>
+          <p>Åtta friliggande villor åt Varbergshus. Vi var med från geoteknisk undersökning och miljöprovtagning till schakt för grundläggning och grovplanering av tomterna.</p>
+          <dl class="feat-facts"><div><dt>Yta</dt><dd>5 600 m²</dd></div><div><dt>Tomter</dt><dd>8</dd></div><div><dt>Beställare</dt><dd>Varbergshus</dd></div></dl>
+          <span class="arrow">Läs om projektet</span>
+        </div>
+      </a>
+      <div class="more3">
+        <a href="tjanst-grundlaggning.html"><div class="ph">{img("husgrund.jpg", alt="Husgrund")}</div><h3>Husgrunder</h3><p>Flera hundra genom åren – villor, garage, förskolor och flerbostadshus.</p></a>
+        <a href="tjanst-vagar.html"><div class="ph">{img("asfalt.jpg", alt="Väg")}</div><h3>Vägar och parkeringar</h3><p>Ofta i samma entreprenad som grundläggningen.</p></a>
+        <a href="tjanst-va.html"><div class="ph">{img("ror.jpg", alt="Rör")}</div><h3>Enskilda avlopp</h3><p>Med minireningsverk, för hus utanför det kommunala nätet.</p></a>
       </div>
-      <div class="tw"><div class="track" id="track" tabindex="0" aria-label="Projekt, svep i sidled">
-        <a class="pcard" href="projekt-lassby.html"><div class="ph house">{img("villaomrade.jpg", lazy=False)}</div><div class="meta"><h3>Låssby</h3><small>Hisingen · 2021–2022</small></div></a>
-        <a class="pcard" href="tjanst-grundlaggning.html"><div class="ph site">{img("husgrund.jpg", "50% 50%", lazy=False)}</div><div class="meta"><h3>Husgrunder</h3><small>Villor, förskolor och flerbostadshus</small></div></a>
-        <a class="pcard" href="tjanst-vagar.html"><div class="ph road">{img("asfalt.jpg", lazy=False)}</div><div class="meta"><h3>Vägar och parkeringar</h3><small>Orust och Göteborgsregionen</small></div></a>
-        <a class="pcard" href="tjanst-va.html"><div class="ph forest">{img("ror.jpg", lazy=False)}</div><div class="meta"><h3>Enskilda avlopp</h3><small>Med minireningsverk</small></div></a>
-      </div><div class="parrows"><div class="pdots" id="pdots" aria-hidden="true"></div><button id="prev" class="parr" aria-label="Föregående projekt"><svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 24H9M21 11 8 24l13 13"/></svg></button><button id="next" class="parr" aria-label="Nästa projekt"><svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 24h31M27 11l13 13-13 13"/></svg></button></div>
-    </div>
     </div>
   </section>
 
@@ -235,12 +239,6 @@ index_main = f'''  {hero}
       <div><a class="btn btn-w" href="tjanst-grundlaggning.html">Läs om grundläggning</a></div>
     </div>
   </section>
-  <div class="in overlap">
-    <div class="ocard">
-      <div class="ph house" style="border-radius:0">{img("tomt.jpg", "50% 50%")}</div>
-      <div class="txt"><h3 style="font-size:1.5rem">Privatperson som ska bygga eller fixa tomten?</h3><p class="lead" style="font-size:1rem">Vi utför finplanering av alla slag åt privatpersoner – gräsmattor, plattytor, murar och plantering.</p><a class="arrow" href="tjanst-finplanering.html">Läs om finplanering</a></div>
-    </div>
-  </div>
 
   <section id="historia">
     <div class="in">

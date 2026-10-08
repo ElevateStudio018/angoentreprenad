@@ -550,3 +550,34 @@ h1,h2,h3{letter-spacing:-.02em}
 /* menyknapp även på dator */
 @media (min-width:1080px){.burger{display:grid;margin-left:0}}
 @media (min-width:1248px){.ov-nav{padding-inline:20px}}
+
+/* Ängö: större grundläggningsband */
+.band .ph{min-height:clamp(560px,88vh,860px)}
+.band h2{font-size:clamp(2.4rem,6vw,4.6rem);max-width:15ch;line-height:1}
+.band p{font-size:1.15rem;max-width:42ch}
+.band .in{gap:20px}
+
+/* Ängö: projekt */
+.projects .headrow{margin-bottom:28px}
+.feat{display:grid;grid-template-columns:1.35fr 1fr;background:var(--beige);border-radius:var(--r);overflow:hidden;text-decoration:none;color:var(--ink)}
+.feat .ph{border-radius:0;min-height:440px}
+.feat .ph img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.feat:hover .ph img{transform:scale(1.04)}
+.feat-body{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.feat-body small{font:500 14px var(--body);color:var(--muted)}
+.feat-body h3{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;letter-spacing:-.03em}
+.feat-body p{margin:0;color:var(--muted);max-width:44ch}
+.feat-facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 36px;margin:8px 0;padding:16px 0;border-block:1px solid var(--line)}
+.feat-facts dt{font:500 13px var(--body);color:var(--muted)}
+.feat-facts dd{margin:2px 0 0;font:600 1.1rem var(--display)}
+.feat:hover .arrow{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
+.more3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.more3 a{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px}
+.more3 .ph{aspect-ratio:16/10;min-height:0}
+.more3 .ph img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.more3 a:hover .ph img{transform:scale(1.04)}
+.more3 h3{font-size:1.2rem;font-weight:600;margin-top:6px}
+.more3 a:hover h3{text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
+.more3 p{margin:0;font-size:15px;color:var(--muted)}
+@media (max-width:860px){.feat{grid-template-columns:1fr}.feat .ph{min-height:260px}.more3{grid-template-columns:1fr}}
+@media (max-width:560px){.feat-facts{grid-template-columns:repeat(3,1fr);gap:0 14px}}
