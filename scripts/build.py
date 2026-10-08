@@ -9,14 +9,10 @@ MAP = "https://www.google.com/maps/search/?api=1&query=Hj%C3%A4lmvik+252+472+97+
 FB = "https://www.facebook.com/angoentreprenad/"
 
 
-def logo_svg(bg, peak):
-    return (f'<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="{bg}"/>'
-            f'<path d="M5 22 13 9.5l8 12.5z" fill="{peak}"/><path d="M16.5 22l4.5-6.8 5 6.8z" fill="#fff"/>'
-            f'<path d="M5 25.5h21" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>')
-
-
-LOGO_DARK = logo_svg("#1f4d3a", "#a9c3a0")
-LOGO_LIGHT = logo_svg("#a9c3a0", "#1f4d3a")
+LOGO_DARK = '<img src="img/ango-logo.svg" alt="Ängö Entreprenad" width="120" height="50">'
+LOGO_LIGHT = '<img src="img/ango-logo-vit.svg" alt="Ängö Entreprenad" width="120" height="50">'
+FAVICON = ("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231d1d1b'/>"
+           "<path d='M10 25 15 9h4l5 16h-4l-3.2-11L14 25z' fill='%23ffd400'/><rect x='12' y='4' width='3' height='3' fill='%23ffd400'/><rect x='18' y='4' width='3' height='3' fill='%23ffd400'/></svg>")
 ARR = '<svg class="arr" viewBox="0 0 52 52" fill="none" stroke-width="2.2" aria-hidden="true"><path d="M10 42 42 10M16 10h26v26"/></svg>'
 
 SERVICES = [
@@ -46,13 +42,13 @@ def header(home=False):
     sub = "".join(f'<a href="tjanst-{s}.html">{t}</a>' for s, t, *_ in SERVICES)
     return f'''<header>
   <div class="in nav">
-    <a class="logo" href="index.html" aria-label="Ängö Entreprenad, {label}"><span class="cube">{LOGO_DARK}</span>Ängö Entreprenad</a>
+    <a class="logo" href="index.html" aria-label="Ängö Entreprenad, {label}">{LOGO_DARK}</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="overlay" aria-label="Öppna menyn"><span></span><span></span><span></span></button>
     <a class="btn btn-g" href="kontakt.html">Kontakta oss</a>
   </div>
 </header>
 <div class="overlay" id="overlay" aria-hidden="true" inert>
-  <div class="ov-top"><a class="logo" href="index.html"><span class="cube">{LOGO_LIGHT}</span>Ängö Entreprenad</a><button class="ov-close" id="menuClose" type="button" aria-label="Stäng menyn">Stäng <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 4l12 12M16 4 4 16"/></svg></button></div>
+  <div class="ov-top"><a class="logo" href="index.html">{LOGO_LIGHT}</a><button class="ov-close" id="menuClose" type="button" aria-label="Stäng menyn">Stäng <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 4l12 12M16 4 4 16"/></svg></button></div>
   <nav aria-label="Huvudmeny"><ul>
     <li><a href="tjanster.html">Vårt erbjudande</a></li>
     <li><a href="projekt.html">Projekt</a></li>
@@ -73,7 +69,7 @@ def footer():
 <footer>
   <div class="in">
     <div class="fgrid">
-      <div><a class="logo" href="index.html"><span class="cube">{LOGO_LIGHT}</span>Ängö Entreprenad</a>
+      <div><a class="logo" href="index.html">{LOGO_LIGHT}</a>
         <p style="margin-top:14px;max-width:36ch">Markentreprenad på Orust och i Göteborgsregionen sedan 1984. Ca 20 anställda och en maskinpark på ca 45 enheter.</p>
         <p style="margin-top:12px">Ängö Entreprenad AB<br>{ADDR}<br><a href="tel:{TEL}">{PHONE}</a> · <a href="mailto:{MAIL}">{MAIL}</a></p>
         <div class="social"><a href="{FB}" target="_blank" rel="noopener" aria-label="Facebook (öppnas i ny flik)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.7.5-1.2 1.2-1.2H17V2h-2.8C11.6 2 10 3.7 10 6.3V8H7.5v3.3H10V22h4V11.3h2.8l.5-3.3z"/></svg></a></div>
@@ -104,7 +100,7 @@ def page(name, title, desc, main, home=False):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,{LOGO_DARK.replace('"', "'").replace('#', '%23').replace(' aria-hidden=\'true\'', " xmlns='http://www.w3.org/2000/svg'")}">
+<link rel="icon" href="data:image/svg+xml,{FAVICON}">
 </head>
 <body>
 {header(home)}
@@ -381,7 +377,7 @@ page("kontakt.html", "Kontakt", "Kontakta Ängö Entreprenad på Orust och i Gö
 
 (OUT / "404.html").write_text('''<!doctype html>
 <html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sidan finns inte – Ängö Entreprenad</title>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#efe8db;color:#1d2420;font:17px/1.6 system-ui,sans-serif;text-align:center;padding:20px}h1{color:#1f4d3a;margin:0 0 8px}a{color:#1f4d3a;font-weight:700}</style></head>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f7f3e4;color:#1d1d1b;font:17px/1.6 system-ui,sans-serif;text-align:center;padding:20px}h1{color:#1d1d1b;margin:0 0 8px}a{color:#1d1d1b;font-weight:700}</style></head>
 <body><div><h1>Sidan finns inte</h1><p>Den här sidan hittades inte. <a href="./">Till startsidan</a></p></div></body></html>
 ''', encoding="utf-8")
 print("ok", len(list(OUT.glob("*.html"))))

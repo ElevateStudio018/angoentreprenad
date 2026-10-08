@@ -1,7 +1,7 @@
 # Ängö Entreprenad – webbplats
 
 Ny webbplats för [Ängö Entreprenad AB](https://angoentreprenad.se/), byggd på samma mall som
-[Lindvik Bygg-sidan i lirk](https://elevatestudio018.github.io/lirk/) (vitt, beige och skogsgrönt,
+[Lindvik Bygg-sidan i lirk](https://elevatestudio018.github.io/lirk/) (med Ängös gula och svarta färger,
 Bricolage Grotesque + Source Sans 3). Designen, `site.css` och `site.js` är desamma; texten är Ängös egen.
 
 ## Sidor
@@ -52,15 +52,22 @@ bilder genom att ersätta filerna med samma namn. `villaomrade.jpg` (Låssby) ko
 ## Video i toppen
 
 Startsidans fullskärmshero spelar Ängös egen drönarfilm (tyst, i loop). Originalet (89 MB) är
-komprimerat till `docs/video/hero.mp4` (1920×1080, ca 10 MB) och `docs/video/hero-mobil.mp4`
-(960×540, ca 3 MB, används på mobil). `docs/img/hero-poster.jpg` visas innan videon har laddats.
+omkodat i hög kvalitet till `docs/video/hero.mp4` (1920×1080, ca 28 MB) och
+`docs/video/hero-mobil.mp4` (1280×720, ca 10 MB, används på skärmar under 768 px).
+`docs/img/hero-poster.jpg` visas innan videon har laddats.
 
-För att byta video: komprimera den nya filen på samma sätt, till exempel
+För att byta video:
 
 ```bash
-ffmpeg -i ny.mp4 -an -c:v libx264 -preset slow -crf 27 -pix_fmt yuv420p -movflags +faststart -vf scale=1920:-2 docs/video/hero.mp4
-ffmpeg -i ny.mp4 -an -c:v libx264 -preset slow -crf 28 -profile:v main -pix_fmt yuv420p -movflags +faststart -vf scale=960:-2 docs/video/hero-mobil.mp4
+ffmpeg -i ny.mp4 -an -c:v libx264 -preset slower -crf 20 -x264-params aq-mode=3 -pix_fmt yuv420p -movflags +faststart docs/video/hero.mp4
+ffmpeg -i ny.mp4 -an -c:v libx264 -preset slower -crf 22 -x264-params aq-mode=3 -pix_fmt yuv420p -movflags +faststart -vf scale=1280:-2 docs/video/hero-mobil.mp4
 ```
+
+## Logga och färger
+
+Loggan finns som vektor i `docs/img/ango-logo.svg` (mörk text) och `docs/img/ango-logo-vit.svg`
+(vit text, för mörk bakgrund), spårad från `docs/img/ango-logo.png`. Temat använder loggans gula
+(`#FFD400`) och svarta (`#1D1D1B`) – se slutet av `docs/assets/site.css`.
 
 ## Ändra text
 
