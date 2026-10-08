@@ -21,12 +21,12 @@ ARR = '<svg class="arr" viewBox="0 0 52 52" fill="none" stroke-width="2.2" aria-
 
 SERVICES = [
     # slug, title, short, photo, position
-    ("grundlaggning", "Grundläggning", "Husgrunder för villor, garage, förskolor och flerbostadshus", "foto-17.jpg", "50% 60%"),
-    ("schakt", "Schakt och sprängning", "Rivning, trädfällning, schakt, sprängning och terrassering", "foto-20.jpg", "50% 50%"),
-    ("va", "VA och enskilda avlopp", "Vatten, avlopp, dränering och minireningsverk", "foto-24.jpg", "50% 60%"),
-    ("vagar", "Vägar och planer", "Vägar, parkeringar, planer och diken", "foto-08.jpg", "50% 50%"),
-    ("finplanering", "Finplanering", "Gräsmattor, plantering, plattytor, murar och L-stöd", "foto-13.jpg", "50% 60%"),
-    ("transporter", "Transporter och kranbil", "Grus, maskintransporter, kranbil och maskinsläp", "foto-01.jpg", "50% 50%"),
+    ("grundlaggning", "Grundläggning", "Husgrunder för villor, garage, förskolor och flerbostadshus", "grundlaggning.jpg", "50% 50%"),
+    ("schakt", "Schakt och sprängning", "Rivning, trädfällning, schakt, sprängning och terrassering", "schakt.jpg", "50% 50%"),
+    ("va", "VA och enskilda avlopp", "Vatten, avlopp, dränering och minireningsverk", "va-ror.jpg", "50% 50%"),
+    ("vagar", "Vägar och planer", "Vägar, parkeringar, planer och diken", "vagar.jpg", "50% 60%"),
+    ("finplanering", "Finplanering", "Gräsmattor, plantering, plattytor, murar och L-stöd", "finplanering.jpg", "50% 60%"),
+    ("transporter", "Transporter och kranbil", "Grus, maskintransporter, kranbil och maskinsläp", "transporter.jpg", "50% 50%"),
 ]
 
 
@@ -144,7 +144,7 @@ def card3(items):
         for t, b in items) + "</div>"
 
 
-LASSBY_CARD = f'<a class="pcard2" href="projekt-lassby.html"><div class="ph">{img("foto-18.jpg", alt="Låssby, Hisingen")}</div><h3>Låssby</h3><small>Villatomter · Hisingen · 2021–2022</small></a>'
+LASSBY_CARD = f'<a class="pcard2" href="projekt-lassby.html"><div class="ph">{img("villaomrade.jpg", alt="Låssby, Hisingen")}</div><h3>Låssby</h3><small>Villatomter · Hisingen · 2021–2022</small></a>'
 
 TIMELINE = '''<ol class="timeline"><li><b>1984</b><p>Dan Johansson startar upp ett enmansbolag i namnet Ängö Schakt.</p></li><li><b>1999</b><p>Verksamheten har vuxit till ca tio anställda och bygget av den nuvarande huvudkontorsanläggningen påbörjas på en större industritomt.</p></li><li><b>2013</b><p>Ängö Entreprenad AB bildas. Robert Andreasson och Joakim Olsson, två av våra dåvarande arbetsledare, kliver in som delägare och det nya huvudkontoret står klart.</p></li><li><b>2016</b><p>Dotterbolaget i Göteborg startas. Peter Carlsson och Per Persson kommer in som delägare för att utveckla verksamheten i Göteborgsregionen.</p></li><li><b>2024</b><p>Vi firar 40 år. Joakim Olsson lämnar företaget efter 36 år och Per Persson går i pension.</p></li></ol>'''
 
@@ -158,9 +158,9 @@ def links_row(skip):
 
 # ---------------------------------------------------------------- startsidan
 hero = f'''<section class="hero" aria-label="Välkommen">
-    <div class="ph site slide on">{img("foto-20.jpg", "50% 55%", lazy=False)}</div>
-    <div class="ph forest slide">{img("foto-01.jpg", "50% 50%", lazy=False)}</div>
-    <div class="ph house slide">{img("foto-23.jpg", "50% 60%", lazy=False)}</div>
+    <div class="ph site slide on">{img("hero-gravmaskin.jpg", "50% 55%", lazy=False)}</div>
+    <div class="ph forest slide">{img("hero-grus.jpg", "50% 50%", lazy=False)}</div>
+    <div class="ph house slide">{img("hero-vag.jpg", "50% 50%", lazy=False)}</div>
     <div class="in">
       <h1>Vi lägger grunden för det du ska bygga</h1>
       <p>Små och stora markentreprenader på Orust och i Göteborgsregionen – med egen maskinpark sedan 1984.</p>
@@ -180,7 +180,7 @@ index_main = f'''  {hero}
 
   <section class="about" id="om">
     <div class="in about2">
-      <div class="media"><div class="ph">{img("foto-04.jpg", "50% 30%", alt="Arbetsledare som går igenom en ritning")}</div></div>
+      <div class="media"><div class="ph">{img("team.jpg", "50% 40%", alt="Arbetsledare som går igenom en ritning")}</div></div>
       <div class="txt">
         <h2 style="margin-top:8px">Markentreprenör på Orust i 40 år</h2>
         <p class="lead" style="margin-top:14px">Tillsammans med olika byggföretag utför vi både små och stora markentreprenader – oftast med grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar. Vi utför även finplanering av alla slag åt både privatpersoner och företag.</p>
@@ -202,17 +202,17 @@ index_main = f'''  {hero}
         <a class="btn btn-g" style="margin-top:22px" href="projekt.html">Alla projekt</a>
       </div>
       <div class="tw"><div class="track" id="track" tabindex="0" aria-label="Projekt, svep i sidled">
-        <a class="pcard" href="projekt-lassby.html"><div class="ph house">{img("foto-18.jpg", lazy=False)}</div><div class="meta"><h3>Låssby</h3><small>Hisingen · 2021–2022</small></div></a>
-        <a class="pcard" href="tjanst-grundlaggning.html"><div class="ph site">{img("foto-17.jpg", "50% 60%", lazy=False)}</div><div class="meta"><h3>Husgrunder</h3><small>Villor, förskolor och flerbostadshus</small></div></a>
-        <a class="pcard" href="tjanst-vagar.html"><div class="ph road">{img("foto-08.jpg", lazy=False)}</div><div class="meta"><h3>Vägar och parkeringar</h3><small>Orust och Göteborgsregionen</small></div></a>
-        <a class="pcard" href="tjanst-va.html"><div class="ph forest">{img("foto-24.jpg", "50% 60%", lazy=False)}</div><div class="meta"><h3>Enskilda avlopp</h3><small>Med minireningsverk</small></div></a>
+        <a class="pcard" href="projekt-lassby.html"><div class="ph house">{img("villaomrade.jpg", lazy=False)}</div><div class="meta"><h3>Låssby</h3><small>Hisingen · 2021–2022</small></div></a>
+        <a class="pcard" href="tjanst-grundlaggning.html"><div class="ph site">{img("husgrund.jpg", "50% 50%", lazy=False)}</div><div class="meta"><h3>Husgrunder</h3><small>Villor, förskolor och flerbostadshus</small></div></a>
+        <a class="pcard" href="tjanst-vagar.html"><div class="ph road">{img("asfalt.jpg", lazy=False)}</div><div class="meta"><h3>Vägar och parkeringar</h3><small>Orust och Göteborgsregionen</small></div></a>
+        <a class="pcard" href="tjanst-va.html"><div class="ph forest">{img("ror.jpg", lazy=False)}</div><div class="meta"><h3>Enskilda avlopp</h3><small>Med minireningsverk</small></div></a>
       </div><div class="parrows"><div class="pdots" id="pdots" aria-hidden="true"></div><button id="prev" class="parr" aria-label="Föregående projekt"><svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M40 24H9M21 11 8 24l13 13"/></svg></button><button id="next" class="parr" aria-label="Nästa projekt"><svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 24h31M27 11l13 13-13 13"/></svg></button></div>
     </div>
     </div>
   </section>
 
   <section class="band" id="erbjudande" aria-label="Grundläggning som helhet">
-    <div class="ph site" style="--g:linear-gradient(180deg,#5d4630,#2f2418)">{img("foto-17.jpg", "50% 60%")}</div>
+    <div class="ph site" style="--g:linear-gradient(180deg,#5d4630,#2f2418)">{img("armering.jpg", "50% 50%")}</div>
     <div class="in">
       <h2>Grundläggning – från obebyggd tomt till färdig grund</h2>
       <p>Vi tar hand om hela processen: sprängning, schakt och fyllning, färdig grund och återställning. Önskas så finplanerar vi även tomten.</p>
@@ -221,7 +221,7 @@ index_main = f'''  {hero}
   </section>
   <div class="in overlap">
     <div class="ocard">
-      <div class="ph house" style="border-radius:0">{img("foto-10.jpg", "50% 40%")}</div>
+      <div class="ph house" style="border-radius:0">{img("tomt.jpg", "50% 50%")}</div>
       <div class="txt"><h3 style="font-size:1.5rem">Privatperson som ska bygga eller fixa tomten?</h3><p class="lead" style="font-size:1rem">Vi utför finplanering av alla slag åt privatpersoner – gräsmattor, plattytor, murar och plantering.</p><a class="arrow" href="tjanst-finplanering.html">Läs om finplanering</a></div>
     </div>
   </div>
@@ -234,10 +234,10 @@ index_main = f'''  {hero}
         <div><a class="btn btn-w" href="maskinpark.html">Se maskinparken</a></div>
       </div>
       <div class="mosaic">
-        <div class="ph site" style="min-height:180px">{img("foto-20.jpg")}</div>
+        <div class="ph site" style="min-height:180px">{img("hjullastare.jpg")}</div>
         <div class="t sand"><b>45</b><span>maskiner, ca antal enheter</span></div>
         <div class="t sage"><b>6</b><span>maskintyper: grävmaskiner, dumprar, lastare, vältar och lastbilar</span></div>
-        <div class="ph people" style="min-height:180px">{img("foto-14.jpg", "50% 30%")}</div>
+        <div class="ph people" style="min-height:180px">{img("traktorgravare.jpg", "50% 50%")}</div>
       </div>
     </div>
   </section>
@@ -246,9 +246,9 @@ index_main = f'''  {hero}
     <div class="in">
       <div class="headrow"><div><h2 style="margin-top:8px">40 år i marken</h2></div><a class="arrow" href="om-oss.html#historia">Hela historien</a></div>
       <div class="newsgrid">
-        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph forest">{img("foto-23.jpg", "50% 60%")}</div><time datetime="1984">1984</time><h3>Ängö Schakt startar</h3><p>Dan Johansson startar upp ett enmansbolag i namnet Ängö Schakt.</p></a>
-        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph people">{img("foto-04.jpg", "50% 30%")}</div><time datetime="2013">2013</time><h3>Ängö Entreprenad AB bildas</h3><p>Två av våra arbetsledare kliver in som delägare och det nya huvudkontoret står klart.</p></a>
-        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph house">{img("foto-18.jpg")}</div><time datetime="2016">2016</time><h3>Vi startar i Göteborg</h3><p>Dotterbolaget startas för att utveckla verksamheten i Göteborgsregionen.</p></a>
+        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph forest">{img("orust-hus.jpg", "50% 60%")}</div><time datetime="1984">1984</time><h3>Ängö Schakt startar</h3><p>Dan Johansson startar upp ett enmansbolag i namnet Ängö Schakt.</p></a>
+        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph people">{img("arbetsledare.jpg", "50% 40%")}</div><time datetime="2013">2013</time><h3>Ängö Entreprenad AB bildas</h3><p>Två av våra arbetsledare kliver in som delägare och det nya huvudkontoret står klart.</p></a>
+        <a class="news" data-tilt href="om-oss.html#historia"><div class="ph house">{img("goteborg.jpg")}</div><time datetime="2016">2016</time><h3>Vi startar i Göteborg</h3><p>Dotterbolaget startas för att utveckla verksamheten i Göteborgsregionen.</p></a>
       </div>
     </div>
   </section>
@@ -257,10 +257,10 @@ index_main = f'''  {hero}
     <div class="in">
       <div class="center" style="margin-bottom:30px"><h2 style="margin-top:8px">Prata med en av oss</h2></div>
       <div class="jobgrid">
-        <div class="big"><div class="ph people">{img("foto-16.jpg", "50% 30%")}</div>
+        <div class="big"><div class="ph people">{img("medarbetare.jpg", "50% 30%")}</div>
           <div class="card"><h3 style="font-size:1.4rem">Orust – huvudkontoret</h3><p style="color:rgb(255 255 255/.85)">Dan Johansson, vd: {PHONE}<br>Robert Andreasson, arbetschef och kalkyl: 0705-23 35 23</p><div><a class="btn btn-w" href="tel:{TEL}">Ring Dan</a></div></div></div>
         <div class="side">
-          <div class="ph site">{img("foto-01.jpg")}</div>
+          <div class="ph site">{img("hjulgravare.jpg")}</div>
           <div class="card2"><h3 style="font-size:1.35rem">Göteborg</h3><p class="lead" style="font-size:1rem">Peter Carlsson, kalkyl och inköp: 0705-26 00 35. Sedan 2016 finns vi även i Göteborgsregionen.</p><a class="arrow" href="kontakt.html">Alla kontaktuppgifter</a></div>
         </div>
       </div>
@@ -270,12 +270,12 @@ index_main = f'''  {hero}
   <section id="bolag" style="background:var(--beige)">
     <div class="in">
       <div class="center"><h2 style="margin-top:8px">Våra bolag</h2></div>
-      <div class="cos2"><a class="co2" href="om-oss.html"><div class="ph">{img("foto-23.jpg", "50% 60%", alt="Ängö Entreprenad")}</div><div class="body"><small>Orust</small><h3>Ängö Entreprenad AB</h3><p>Huvudkontoret på Hjälmvik, Orust. Markentreprenader sedan 1984.</p><span class="arrow">Om Ängö Entreprenad</span></div></a><a class="co2" href="kontakt.html#kontor"><div class="ph">{img("foto-19.jpg", alt="Ängö Göteborg")}</div><div class="body"><small>Göteborgsregionen</small><h3>Ängö Göteborg</h3><p>Dotterbolaget som sedan 2016 utvecklar verksamheten i Göteborgsregionen.</p><span class="arrow">Kontakta Göteborg</span></div></a><a class="co2" href="maskinpark.html"><div class="ph">{img("foto-20.jpg", alt="Maskinpark")}</div><div class="body"><small>Maskiner och transporter</small><h3>Maskinparken</h3><p>Ca 45 enheter, lastbilar för grus och maskiner, kranbil och maskinsläp.</p><span class="arrow">Se maskinparken</span></div></a></div>
+      <div class="cos2"><a class="co2" href="om-oss.html"><div class="ph">{img("orust-hus.jpg", "50% 60%", alt="Ängö Entreprenad")}</div><div class="body"><small>Orust</small><h3>Ängö Entreprenad AB</h3><p>Huvudkontoret på Hjälmvik, Orust. Markentreprenader sedan 1984.</p><span class="arrow">Om Ängö Entreprenad</span></div></a><a class="co2" href="kontakt.html#kontor"><div class="ph">{img("goteborg.jpg", alt="Ängö Göteborg")}</div><div class="body"><small>Göteborgsregionen</small><h3>Ängö Göteborg</h3><p>Dotterbolaget som sedan 2016 utvecklar verksamheten i Göteborgsregionen.</p><span class="arrow">Kontakta Göteborg</span></div></a><a class="co2" href="maskinpark.html"><div class="ph">{img("maskiner.jpg", alt="Maskinpark")}</div><div class="body"><small>Maskiner och transporter</small><h3>Maskinparken</h3><p>Ca 45 enheter, lastbilar för grus och maskiner, kranbil och maskinsläp.</p><span class="arrow">Se maskinparken</span></div></a></div>
       <div class="shortcuts" aria-label="Genvägar">
-        <a class="sc" href="om-oss.html"><div class="ph">{img("foto-04.jpg")}</div><b>Om oss</b></a>
-        <a class="sc" href="kontakt.html#kontor"><div class="ph">{img("foto-23.jpg")}</div><b>Kontor</b></a>
-        <a class="sc" href="maskinpark.html"><div class="ph">{img("foto-20.jpg")}</div><b>Maskinpark</b></a>
-        <a class="sc" href="projekt.html"><div class="ph">{img("foto-18.jpg")}</div><b>Projekt</b></a>
+        <a class="sc" href="om-oss.html"><div class="ph">{img("team.jpg")}</div><b>Om oss</b></a>
+        <a class="sc" href="kontakt.html#kontor"><div class="ph">{img("alvsborgsbron.jpg")}</div><b>Kontor</b></a>
+        <a class="sc" href="maskinpark.html"><div class="ph">{img("hjullastare.jpg")}</div><b>Maskinpark</b></a>
+        <a class="sc" href="projekt.html"><div class="ph">{img("villaomrade.jpg")}</div><b>Projekt</b></a>
       </div>
     </div>
   </section>
@@ -303,7 +303,7 @@ why = card3([
     ("Orust och Göteborg", "Huvudkontor på Hjälmvik och eget bolag i Göteborgsregionen sedan 2016."),
     ("Egna transporter", "Lastbilar för grus och maskiner, kranbil och maskinsläp."),
 ])
-page("tjanster.html", "Vårt erbjudande", "Markentreprenader åt byggföretag, företag och privatpersoner.", f'''{phero("Vårt erbjudande", "Små och stora markentreprenader – åt byggföretag, företag och privatpersoner.", "foto-20.jpg", "50% 55%")}<section><div class="in">{tiles()}</div></section><section class="related"><div class="in"><div class="content"><div class="prose"><h2 style="margin-top:0">En markentreprenör för hela jobbet</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader. Oftast handlar det om grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar.</p><p>Vi utför även finplanering av alla slag åt både privatpersoner och företag, och våra lastbilar kör grus och maskiner.</p><h2>Det här gör vi</h2><ul><li>Rivning av hus och trädfällning</li><li>Schaktning, sprängning och terrassering</li><li>Grundläggning</li><li>Vatten och avlopp samt enskilda avlopp med minireningsverk</li><li>Vägbyggnation, diken för dränering och grusning</li><li>Gräsmattor, plantering, plattytor, murar och L-stöd</li><li>Kranbilsarbeten och maskintransporter</li></ul></div>{aside_contact(0, "Var jobbar vi?", "Berätta om ditt projekt").replace("<h3>Var jobbar vi?</h3>", "<h3>Var jobbar vi?</h3><p>Orust och Göteborgsregionen. Huvudkontoret ligger på Hjälmvik 252 i Varekil.</p>")}</div></div></section><section><div class="in"><h2>Varför välja Ängö?</h2>{why}</div></section>''')
+page("tjanster.html", "Vårt erbjudande", "Markentreprenader åt byggföretag, företag och privatpersoner.", f'''{phero("Vårt erbjudande", "Små och stora markentreprenader – åt byggföretag, företag och privatpersoner.", "hero-gravmaskin.jpg", "50% 55%")}<section><div class="in">{tiles()}</div></section><section class="related"><div class="in"><div class="content"><div class="prose"><h2 style="margin-top:0">En markentreprenör för hela jobbet</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader. Oftast handlar det om grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar.</p><p>Vi utför även finplanering av alla slag åt både privatpersoner och företag, och våra lastbilar kör grus och maskiner.</p><h2>Det här gör vi</h2><ul><li>Rivning av hus och trädfällning</li><li>Schaktning, sprängning och terrassering</li><li>Grundläggning</li><li>Vatten och avlopp samt enskilda avlopp med minireningsverk</li><li>Vägbyggnation, diken för dränering och grusning</li><li>Gräsmattor, plantering, plattytor, murar och L-stöd</li><li>Kranbilsarbeten och maskintransporter</li></ul></div>{aside_contact(0, "Var jobbar vi?", "Berätta om ditt projekt").replace("<h3>Var jobbar vi?</h3>", "<h3>Var jobbar vi?</h3><p>Orust och Göteborgsregionen. Huvudkontoret ligger på Hjälmvik 252 i Varekil.</p>")}</div></div></section><section><div class="in"><h2>Varför välja Ängö?</h2>{why}</div></section>''')
 
 DETAIL = {
     "grundlaggning": ("Vår specialitet. Husgrunder i alla storlekar – från villor och garage till förskolor och flerbostadshus.",
@@ -340,9 +340,9 @@ for slug, title, short, photo, pos in SERVICES:
       {aside_contact(1 if slug in ("grundlaggning", "schakt", "vagar") else 0)}</div></section>{related}{links_row(slug)}''')
 
 # ---------------------------------------------------------------- projekt
-page("projekt.html", "Projekt", "Ett urval av Ängö Entreprenads projekt.", f'''{phero("Gjort av oss", "Flera hundra husgrunder och markentreprenader sedan 1984. Här är ett urval.", "foto-18.jpg")}<section><div class="in"><div class="cards3">{LASSBY_CARD}<a class="pcard2" href="tjanst-grundlaggning.html"><div class="ph">{img("foto-17.jpg", "50% 60%", alt="Husgrund")}</div><h3>Husgrunder</h3><small>Villor, garage, förskolor och flerbostadshus</small></a><a class="pcard2" href="tjanst-finplanering.html"><div class="ph">{img("foto-13.jpg", "50% 60%", alt="Finplanerad tomt")}</div><h3>Finplanering</h3><small>Åt privatpersoner och företag</small></a></div></div></section><section class="related"><div class="in"><div class="content"><div class="prose"><h2 style="margin-top:0">Markentreprenader sedan 1984</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader, oftast med grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar.</p><p>Vi har gjort flera hundra husgrunder genom åren – från villor och garage till stora förskolor och flerbostadshus. Fler referenser berättar vi gärna om när du hör av dig.</p></div>{aside_contact(0, "Vill du veta mer?", "Hör av dig")}</div></div></section>''')
+page("projekt.html", "Projekt", "Ett urval av Ängö Entreprenads projekt.", f'''{phero("Gjort av oss", "Flera hundra husgrunder och markentreprenader sedan 1984. Här är ett urval.", "hjullastare.jpg")}<section><div class="in"><div class="cards3">{LASSBY_CARD}<a class="pcard2" href="tjanst-grundlaggning.html"><div class="ph">{img("husgrund.jpg", alt="Husgrund")}</div><h3>Husgrunder</h3><small>Villor, garage, förskolor och flerbostadshus</small></a><a class="pcard2" href="tjanst-finplanering.html"><div class="ph">{img("tomt.jpg", alt="Finplanerad tomt")}</div><h3>Finplanering</h3><small>Åt privatpersoner och företag</small></a></div></div></section><section class="related"><div class="in"><div class="content"><div class="prose"><h2 style="margin-top:0">Markentreprenader sedan 1984</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader, oftast med grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar.</p><p>Vi har gjort flera hundra husgrunder genom åren – från villor och garage till stora förskolor och flerbostadshus. Fler referenser berättar vi gärna om när du hör av dig.</p></div>{aside_contact(0, "Vill du veta mer?", "Hör av dig")}</div></div></section>''')
 
-page("projekt-lassby.html", "Låssby", "Schakt för grundläggning och grovplanering av åtta villatomter i Låssby på Hisingen.", f'''{phero("Låssby", "Åtta friliggande villor på Hisingen. Vi var med från första provtagningen till grovplanerade tomter.", "foto-18.jpg", "50% 50%", (("Projekt", "projekt.html"),))}<section><div class="in content"><div class="prose"><div class="stats"><div><b>5 600 m²</b><span>yta</span></div><div><b>8</b><span>villatomter</span></div><div><b>2021–2022</b><span>tid</span></div></div><p>Varberghus planerar att bygga åtta stycken friliggande villor i Låssby på Hisingen.</p><p>Vi var med tidigt efter de arkeologiska utgrävningarna och genomförde en geoteknisk undersökning, miljöprovtagning och inmätning av befintliga vägar och nivåer inför projektering och byggnation.</p><h2>Vårt uppdrag</h2><ul><li>Geoteknisk undersökning</li><li>Miljöprovtagning</li><li>Inmätning av befintliga vägar och nivåer</li><li>Schakt för grundläggning</li><li>Grovplanering av tomterna</li></ul></div>
+page("projekt-lassby.html", "Låssby", "Schakt för grundläggning och grovplanering av åtta villatomter i Låssby på Hisingen.", f'''{phero("Låssby", "Åtta friliggande villor på Hisingen. Vi var med från första provtagningen till grovplanerade tomter.", "villaomrade.jpg", "50% 50%", (("Projekt", "projekt.html"),))}<section><div class="in content"><div class="prose"><div class="stats"><div><b>5 600 m²</b><span>yta</span></div><div><b>8</b><span>villatomter</span></div><div><b>2021–2022</b><span>tid</span></div></div><p>Varberghus planerar att bygga åtta stycken friliggande villor i Låssby på Hisingen.</p><p>Vi var med tidigt efter de arkeologiska utgrävningarna och genomförde en geoteknisk undersökning, miljöprovtagning och inmätning av befintliga vägar och nivåer inför projektering och byggnation.</p><h2>Vårt uppdrag</h2><ul><li>Geoteknisk undersökning</li><li>Miljöprovtagning</li><li>Inmätning av befintliga vägar och nivåer</li><li>Schakt för grundläggning</li><li>Grovplanering av tomterna</li></ul></div>
       <aside class="aside"><h3>Fakta</h3><dl><div><dt>Yta</dt><dd>5 600 m²</dd></div><div><dt>Tid</dt><dd>2021–2022</dd></div><div><dt>Plats</dt><dd>Låssby, Hisingen</dd></div><div><dt>Beställare</dt><dd>Varbergshus</dd></div></dl><a class="btn btn-g" href="kontakt.html">Göra något liknande?</a></aside></div></section>{links_row("")}''')
 
 # ---------------------------------------------------------------- maskinpark
@@ -354,11 +354,11 @@ machines = card3([
     ("Vältar", "Packning av vägar, planer och grunder."),
     ("Lastbilar", "Kör grus och maskiner. Kranbil och maskinsläp finns också."),
 ])
-page("maskinpark.html", "Maskinpark", "En modern maskinpark på ca 45 enheter.", f'''{phero("Maskinpark", "En modern maskinpark på ca 45 enheter – rätt maskin för varje jobb.", "foto-20.jpg", "50% 55%")}<section><div class="in content"><div class="prose"><div class="stats"><div><b>45</b><span>enheter</span></div><div><b>6</b><span>maskintyper</span></div><div><b>20</b><span>anställda</span></div></div><p>Vi strävar efter att hålla maskinparken uppdaterad för att möta dagens krav och minska vår miljöpåverkan.</p><p>Med egna maskiner och egna förare kan vi ta hela markjobbet – och våra lastbilar kör både grus och maskiner.</p></div>{aside_contact(1, "Behöver du en maskin?", "Skicka en förfrågan")}</div></section><section class="related"><div class="in"><h2>I parken</h2>{machines}</div></section>''')
+page("maskinpark.html", "Maskinpark", "En modern maskinpark på ca 45 enheter.", f'''{phero("Maskinpark", "En modern maskinpark på ca 45 enheter – rätt maskin för varje jobb.", "hjullastare.jpg", "50% 60%")}<section><div class="in content"><div class="prose"><div class="stats"><div><b>45</b><span>enheter</span></div><div><b>6</b><span>maskintyper</span></div><div><b>20</b><span>anställda</span></div></div><p>Vi strävar efter att hålla maskinparken uppdaterad för att möta dagens krav och minska vår miljöpåverkan.</p><p>Med egna maskiner och egna förare kan vi ta hela markjobbet – och våra lastbilar kör både grus och maskiner.</p></div>{aside_contact(1, "Behöver du en maskin?", "Skicka en förfrågan")}</div></section><section class="related"><div class="in"><h2>I parken</h2>{machines}</div></section>''')
 
 # ---------------------------------------------------------------- om oss
 people_html = "".join(f'<div class="person"><span class="av" aria-hidden="true">{av}</span><b>{n}</b><span>{r}, {o}</span></div>' for av, n, r, o, *_ in PEOPLE)
-page("om-oss.html", "Om oss", "Ängö Entreprenad – markentreprenör på Orust sedan 1984.", f'''{phero("Om Ängö Entreprenad", "Från enmansbolaget Ängö Schakt 1984 till ca 20 anställda och 45 maskiner.", "foto-23.jpg", "50% 60%")}<section><div class="in content"><div class="prose"><h2 style="margin-top:0">Markentreprenör på Orust</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader – oftast med grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar. Vi utför även finplanering av alla slag åt både privatpersoner och företag.</p><p>I dag är vi ca 20 anställda och har en modern maskinpark på ca 45 enheter. Huvudkontoret ligger på Hjälmvik, Orust, och sedan 2016 finns vi även i Göteborgsregionen.</p>
+page("om-oss.html", "Om oss", "Ängö Entreprenad – markentreprenör på Orust sedan 1984.", f'''{phero("Om Ängö Entreprenad", "Från enmansbolaget Ängö Schakt 1984 till ca 20 anställda och 45 maskiner.", "orust-hus.jpg", "50% 60%")}<section><div class="in content"><div class="prose"><h2 style="margin-top:0">Markentreprenör på Orust</h2><p>Tillsammans med olika byggföretag utför vi både små och stora markentreprenader – oftast med grundläggning av hus och tillhörande vägar, planer, parkeringar och ledningar. Vi utför även finplanering av alla slag åt både privatpersoner och företag.</p><p>I dag är vi ca 20 anställda och har en modern maskinpark på ca 45 enheter. Huvudkontoret ligger på Hjälmvik, Orust, och sedan 2016 finns vi även i Göteborgsregionen.</p>
   <h2 id="historia">Vår historia</h2>{TIMELINE}
   <h2>Ledning och kontakt</h2><div class="people">{people_html}</div></div>
   <aside class="aside"><h3>Ängö i siffror</h3><dl><div><dt>Grundat</dt><dd>1984 som Ängö Schakt</dd></div><div><dt>Anställda</dt><dd>Ca 20</dd></div><div><dt>Maskiner</dt><dd>Ca 45 enheter</dd></div><div><dt>Kontor</dt><dd>Orust och Göteborg</dd></div></dl><a class="btn btn-g" href="kontakt.html">Kontakta oss</a></aside></div></section><section class="related"><div class="in"><h2>Våra kontor</h2>{card3([("Orust – huvudkontor", "Hjälmvik 252, 472 97 Varekil. Här finns vd, arbetschef och kalkyl."), ("Göteborg", "Dotterbolaget som sedan 2016 utvecklar verksamheten i Göteborgsregionen.")])}</div></section>''')
